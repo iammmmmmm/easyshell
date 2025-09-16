@@ -1,4 +1,4 @@
-name: Linux_amd64
+name: EasyShell Package by Linux_amd64
 
 on:
   workflow_dispatch:
@@ -71,10 +71,11 @@ jobs:
             --name "$APP_NAME" \
             --app-version "$APP_VERSION" \
             --vendor "oyzh" \
-            -t deb \
-            -i target \
+            --type deb \
+            --input target \
             --main-jar "$JAR_NAME" \
-            -d dist 
+            --dest dist \
+            --linux-shortcut
 
       - name: Show directory structure
         run: |
